@@ -1,0 +1,77 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, graphicx}
+
+%导言区
+\title{课程《信号与系统》笔记}
+\author{NH5}
+\date{更新于2025.3.8}
+
+\begin{document}
+\maketitle
+
+\section{信号和系统的概念与分类}
+\subsection{信号的分类}
+信号可以从如下四个维度进行分类:
+
+确定与随机、连续与离散、周期与非周期、能量与功率
+
+\subsubsection{确定与随机}
+\textbf{确定信号}:具有确定时间函数的信号
+
+\textbf{随机信号}:不具有确定性函数,只能从统计意义上描述
+
+\subsubsection{连续与离散}
+连续信号和离散信号的区别在于定义域是否连续,类似函数和数列
+
+\subsubsection{周期与非周期}
+含义类似周期函数或周期数列
+
+\textbf{注意:两个周期数列的组合不一定是周期数列}
+
+例如:
+\begin{align*}
+    f_1(t) &= \cos (t)\\
+    f_2(t) &= \cos (0.1 \pi t)\\
+    f(t) &= f_1(t) + f_2(t)
+\end{align*}
+
+\subsubsection{能量与功率}
+信号的能量与功率通过如下公式计算:
+
+能量:
+\begin{align*}
+    W &= \lim_{T \to \infty}\int_{-T}^{T} |f(t)|^2 dt\\
+    W &= \lim_{N \to \infty}\sum_{-N}^{N}|f(k)|^2
+\end{align*}
+
+功率:
+\begin{align*}
+    P &= \lim_{T \to \infty}\frac{1}{2T}\int_{-T}^{T}|f(t)|^2 dt\\
+    P &= \lim_{N \to \infty}\frac{1}{2N}\sum_{-N}^{N}|f(k)|^2
+\end{align*}
+
+能量信号:
+\[
+    0<W<\infty,P\to 0
+\]
+
+功率信号:
+\[
+    0<P<\infty,W\to 0
+\]
+
+\subsection{系统的分类}
+
+\section{时域分析}
+\subsection{信号的时域运算}
+\subsection{系统的时域分析}
+
+\section{频域分析}
+\subsection{信号的频域分析}
+\subsection{系统的频域分析}
+
+\section{复频域分析}
+\subsection{信号的复频域分析}
+\subsection{系统的复频域分析}
+
+\end{document}
