@@ -4,7 +4,7 @@
 %导言区
 \title{课程《信号与系统》笔记}
 \author{NH5}
-\date{更新于2025.3.8}
+\date{更新于2025.3.9}
 
 \begin{document}
 \maketitle
@@ -60,18 +60,97 @@
     0<P<\infty,W\to 0
 \]
 
+存在某些信号,既不是能量信号,也不是功率信号,例如$f(t)=e^t$.
 \subsection{系统的分类}
+\subsubsection{系统的定义}
+系统由若干相互联系的单元组成,具有某种功能,用以达到某种目的.
 
-\section{时域分析}
-\subsection{信号的时域运算}
-\subsection{系统的时域分析}
+激励(Excitation,$e(t)$)输入系统,输出响应(Response,$r(t)$)
 
-\section{频域分析}
-\subsection{信号的频域分析}
-\subsection{系统的频域分析}
+\subsubsection{系统的描述}
+可以通过数学模型(输入输出方程、状态方程等)或物理模型(电路等)等方式描述系统
 
-\section{复频域分析}
-\subsection{信号的复频域分析}
-\subsection{系统的复频域分析}
+连续时间系统用$N$阶常系数微分方程描述:
+\begin{align*}
+    &y^{(n)}(t)+a_{n-1}y^{(n-1)}(t)+...+a_1y^{(1)}(t)+a_0y(t)\\
+    = &b_mf^{(m)}(t)+b_{m-1}f^{(m-1)}(t)+...+b_1f^{(1)}(t)+b_0f(t)
+\end{align*}
+
+方程左边是输出信号$y(t)$,方程右边是输入信号$f(t)$.
+
+这里ppt中的公式有错误,对照教材查看是笔记当前的公式
+
+除了微分方程,还可以用框图描述.
+
+\subsubsection{系统的分类}
+系统分类由五个维度:连续时间和离散时间、线性和非线性、时变和时不变、因果和非因果、稳定和非稳定
+
+\textbf{连续离散}:
+
+输入输出都是连续信号的系统是连续时间系统,相应的可以得到离散时间系统的定义
+
+\textbf{线性非线性}:
+
+符合\textbf{齐次性}和\textbf{叠加性}的系统是线性系统
+
+任何线性系统都可以分解为零输入相应与零状态响应的和
+
+\textbf{时变时不变}:
+
+当输入从$f(t)$变为$f(t-t_0)$时,相应的输出由$y(t)$变为$y(t-t_0)$,这样的系统称为时不变系统
+
+相应的,不满足条件的称为时变系统
+
+\textbf{因果非因果}:
+
+响应不早于激励产生的系统称为因果系统
+
+可以通过判断输出是否早于输入判断系统类型
+
+\textbf{稳定非稳定}:
+
+对任何有界输入都只产生有界输出的系统是稳定系统
+
+课程重点在\textbf{线性时不变连续时间系统(LTI系统)}
+
+\section{连续时间信号}
+\subsection{常用信号}
+\subsubsection{正弦信号}
+\[f(t)=A\sin (\omega_0t+\varphi)\]
+
+\subsubsection{实指数信号}
+\[f(t)=Ke^{\alpha t}\]
+单边指数信号:
+\[
+    f(t)=\begin{cases}
+        e^{\alpha t},&t \ge 0\\
+        0,&t < 0
+    \end{cases}
+\]
+
+\subsubsection{虚指数信号}
+\[f(t)=e^{j\omega t}\]
+
+它是周期信号
+
+\subsubsection{复指数信号}
+\[f(t)=Ke^{st},s=\sigma +j\omega \]
+
+\subsubsection{抽样信号}
+抽样函数具有如下性质:
+
+实函数、偶函数、衰减函数;
+
+零点:$x=\pm k\pi$;
+
+最大值:$Sa(0)=1$;
+
+\[
+    \int_{-\infty}^{\infty}Sa(t)dt=\pi
+\]
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=8cm]{抽样函数.jpg}
+\end{figure}
 
 \end{document}
