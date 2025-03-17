@@ -4,7 +4,7 @@
 %导言区
 \title{课程《信号与系统》笔记}
 \author{NH5}
-\date{更新于2025.3.9}
+\date{更新于2025.3.17}
 
 \begin{document}
 \maketitle
@@ -150,7 +150,53 @@
 \]
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=8cm]{抽样函数.jpg}
+    \includegraphics[width=8cm]{photos/抽样函数.jpg}
 \end{figure}
 
+\subsection{信号的变换}
+\subsubsection{平移(延时)}
+\[
+    f(t) \to f(t\pm t_0)
+\]
+"左加右减"
+
+\subsubsection{尺度变换}
+\[
+    f(t)\to f(at)(a>0)
+\]
+纵坐标不变,横坐标压缩或展宽
+
+\subsubsection{反折}
+\[
+    f(t)\to f(-t)
+\]
+图像关于y轴对称
+
+\subsection{常用信号的性质或作用}
+\subsubsection{方波信号}
+某一段方波可以用单位阶跃信号的线性组合表示
+\[
+    f(t) = U(t-t_1) - U(t-t_2)(t_1<t_2)
+\]
+
+\subsection{分段函数或类分段函数}
+可以用单位阶跃信号表示某个信号在某一段定义域上的图像
+\[
+    f(t)\to f(t)[U(t-t_1) - U(t-t_2)]
+\]
+
+\subsubsection{冲激信号的性质}
+\begin{align*}
+    &f(t)\delta(t-t_0)=f(t_0)\delta(t-t_0)\\
+    &\int_{-\infty}^{\infty}f(t)\delta(t)dt=f(0)\int_{-\infty}^{\infty}\delta(t)dt=f(0)\\
+    &\delta(at)=\frac{1}{|a|}\delta(t)\\
+    &\delta(t)=\delta(-t)
+\end{align*}
+
+\subsubsection{几种奇异信号的关系}
+\begin{align*}
+    &\delta'(t)=\frac{d\delta(t)}{dt}\\
+    &\delta(t)=\frac{du(t)}{dt}\\
+    &u(t)=\frac{r(t)}{dt}
+\end{align*}
 \end{document}
